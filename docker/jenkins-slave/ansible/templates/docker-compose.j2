@@ -1,0 +1,17 @@
+---
+
+version: '2'
+services:
+  jenkinSlave:
+    image: docker-jenkins-slave
+    user: 65534:65534
+    group_add:
+      - 65534
+    environment:
+      - JENKINS_URL=""
+      - JENKINS_JNLP_URL=""
+      - JENKINS_SECRET=""
+    volumes:
+      - ../data:/data:Z
+
+      
